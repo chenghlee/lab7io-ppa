@@ -1,0 +1,14 @@
+libcacard (1:2.5.0-2) unstable; urgency=medium
+
+  * add remove-requires.private.patch to remove Requires.private
+    from libcacard.pc.  We're not building static library so
+    these are not used, but pkg-config wants to see the dependent
+    .pc files.  Arguably it is pkg-config bug.  (Closes: #804289)
+
+ -- Michael Tokarev <mjt@tls.msk.ru>  Sat, 07 Nov 2015 13:03:01 +0300
+
+libcacard (1:2.5.0-1a) unstable; urgency=medium
+
+  * Initial release, source has been split out of qemu
+
+ -- Michael Tokarev <mjt@tls.msk.ru>  Fri, 09 Oct 2015 13:58:13 +0300

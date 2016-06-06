@@ -1,0 +1,4 @@
+# list of autogen files to ignore to be able to build from git source
+extend-diff-ignore = ^src/link_test\.c$|^autogen\.sh$|^build-aux/git-version-gen$|^git\.mk$
+extend-diff-ignore =  ^\.version$|^Makefile\.in$|^aclocal\.m4$|^build-aux/compile$|^build-aux/config\.(guess|sub)$|^build-aux/depcomp$|^build-aux/install-sh$|^build-aux/ltmain\.sh$|^build-aux/missing$|^configure$|^m4/libtool\.m4$|^src/Makefile\.in$|^ChangeLog$|^\.tarball-version$
+
