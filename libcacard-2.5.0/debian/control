@@ -1,11 +1,12 @@
 Source: libcacard
 Section: otherosfs
 Priority: extra
-Maintainer: Michael Tokarev <mjt@tls.msk.ru>
-Build-Depends: debhelper (>=9), pkg-config, libtool-bin,
+Maintainer: Cheng H. Lee <cheng.h.lee@gmail.com>
+XSBC-Original-Maintainer: Michael Tokarev <mjt@tls.msk.ru>
+Build-Depends: debhelper (>=9), pkg-config, libtool,
  libnss3-dev (>=3.12.8~),
  libglib2.0-dev (>=2.22~),
-Standards-Version: 3.9.6
+Standards-Version: 3.9.5
 Homepage: http://cgit.freedesktop.org/spice/libcacard/
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-qemu/libcacard.git
 Vcs-Git: git://anonscm.debian.org/pkg-qemu/libcacard.git

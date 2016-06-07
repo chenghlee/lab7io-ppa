@@ -1,3 +1,9 @@
+libcacard (1:2.5.0-2ppa1~trusty1) trusty; urgency=low
+
+  * Backported to 14.04 (Trusty Tahr)
+
+ -- Cheng H. Lee <cheng.h.lee@gmail.com>  Mon, 06 Jun 2016 15:41:02 -0500
+
 libcacard (1:2.5.0-2) unstable; urgency=medium
 
   * add remove-requires.private.patch to remove Requires.private
