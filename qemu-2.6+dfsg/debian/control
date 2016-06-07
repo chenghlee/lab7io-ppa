@@ -1,8 +1,9 @@
 Source: qemu
 Section: otherosfs
 Priority: optional
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
-XSBC-Original-Maintainer: Debian QEMU Team <pkg-qemu-devel@lists.alioth.debian.org>
+Maintainer: Cheng H. Lee <cheng.h.lee@gmail.com>
+XSBC-Original-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>,
+	Debian QEMU Team <pkg-qemu-devel@lists.alioth.debian.org>
 Uploaders: Aurelien Jarno <aurel32@debian.org>,
 	Riku Voipio <riku.voipio@iki.fi>,
 	Vagrant Cascadian <vagrant@debian.org>,
@@ -46,8 +47,8 @@ Build-Depends: debhelper (>= 9),
 # libgtk2.0-dev, libvte-dev (>> 0.18.0~),
 # vte is used together with gtk
 # --disable-vte
-# --enable-libiscsi
- libiscsi-dev (>> 1.9.0~),
+# --disable-libiscsi
+# libiscsi-dev (>> 1.9.0~),
 # --enable-curses
  libncurses5-dev,
 # --enable-numa i386|amd64|ia64|mips|mipsel|powerpc|powerpcspe|x32|ppc64|ppc64el|arm64|sparc|hppa
@@ -106,7 +107,7 @@ Build-Depends: debhelper (>= 9),
 ##--enable-quorum todo needs gcrypt
 ##--enable-xen-pci-passthrough todo
 Build-Conflicts: oss4-dev
-Standards-Version: 3.9.8
+Standards-Version: 3.9.5
 Homepage: http://www.qemu.org/
 Vcs-Browser: https://anonscm.debian.org/gitweb/?p=pkg-qemu/qemu.git;a=shortlog;h=refs/heads/ubuntu-utopic
 XS-Debian-Vcs-Browser: https://anonscm.debian.org/gitweb/?p=pkg-qemu/qemu.git

@@ -1,3 +1,12 @@
+qemu (1:2.6+dfsg-1ubuntu1ppa1~trusty1) trusty; urgency=low
+
+  * Backported to 14.04 (Trusty Tahr)
+    - debian/control: disabled iSCSI support; QEMU requires libiscsi >= 1.9.0,
+      but backporting and installing that may cause problems for other
+      applications that depend on libiscsi 1.4.0 that ships with trusty.
+
+ -- Cheng H. Lee <cheng.h.lee@gmail.com>  Mon, 06 Jun 2016 14:49:13 -0500
+
 qemu (1:2.6+dfsg-1ubuntu1) yakkety; urgency=medium
 
   * Merge with Debian; remaining changes:  (LP: #1583775)
