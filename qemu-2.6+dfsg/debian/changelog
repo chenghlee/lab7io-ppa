@@ -1,3 +1,94 @@
+qemu (1:2.6+dfsg-3ubuntu1ppa1~trusty1) trusty; urgency=medium
+
+  * Merge yakkety upstream for security patches.
+
+ -- Cheng H. Lee <cheng.h.lee@gmail.com>  Mon, 20 Jun 2016 22:46:55 -0500
+
+qemu (1:2.6+dfsg-3ubuntu1) yakkety; urgency=medium
+
+  * Merge with Debian; remaining changes:
+    - debian/rules: do not drop the init scripts loading kvm modules
+      (still needed in precise in cloud archive)
+    - qemu-system-common.postinst:
+      * remove acl placed by udev, and add udevadm trigger.
+      * reload kvm_intel if needed to set nested=1
+    - qemu-system-common.preinst: add kvm group if needed
+    - add qemu-kvm upstart job and defaults file (rules,
+      qemu-system-x86.qemu-kvm.default, qemu-system-x86.qemu-kvm.upstart)
+    - rules,qemu-system-x86.modprobe: support use under older udevs which
+      do not auto-load the kvm kernel module.  Enable nesting by default
+      on intel.
+    - d/p/ubuntu/expose-vmx_qemu64cpu.patch: enable nested kvm by default
+      in qemu64 cpu type.
+    - d/p/ubuntu/define-ubuntu-machine-types.patch: define distro machine
+      types to ease future live vm migration.
+    - apport hook for qemu source package: d/source_qemu-kvm.py,
+      d/qemu-system-common.install
+    - Make qemu-system-common and qemu-utils depend on qemu-block-extra
+      to fix errors with missing block backends.
+    - s390x:
+      * Create qemu-system-s390x package
+      * Enable pie by default, on ubuntu/s390x.
+      * Enable svm by default for qemu64 on amd
+      * Include s390-ccw.img firmware
+      * have qemu-system-aarch64 Suggest: qemu-efi; this should be a stronger
+        relationship, but qemu-efi is still in universe right now.
+
+ -- Serge Hallyn <serge.hallyn@ubuntu.com>  Wed, 15 Jun 2016 16:49:49 -0500
+
+qemu (1:2.6+dfsg-3) unstable; urgency=high
+
+  * more security fixes picked from upstream:
+   - CVE-2016-4454 fix (vmsvga) (Closes: CVE-2016-4454)
+    vmsvga-add-more-fifo-checks-CVE-2016-4454.patch
+    vmsvga-move-fifo-sanity-checks-to-vmsvga_fifo_length-CVE-2016-4454.patch
+    vmsvga-shadow-fifo-registers-CVE-2016-4454.patch
+   - vmsvga-don-t-process-more-than-1024-fifo-commands-at-once-CVE-2016-4453.patch
+    (Closes: CVE-2016-4453)
+   - scsi-check-buffer-length-before-reading-scsi-command-CVE-2016-5238.patch
+    (Closes: #826152, CVE-2016-5238)
+  * set urgency to high due to the amount of
+    security fixes accumulated so far
+
+ -- Michael Tokarev <mjt@tls.msk.ru>  Wed, 15 Jun 2016 08:54:12 +0300
+
+qemu (1:2.6+dfsg-2) unstable; urgency=medium
+
+  * add missing log entries for previous upload,
+    remove closing of #807006 (it is not closed)
+  * Added vga-add-sr_vbe-register-set.patch from upstream
+    This fixes regression (in particular with win7 installer)
+    introduced by the fix for CVE-2016-3712 (commit fd3c136)
+  * fix-linking-relocatable-objects-on-sparc.patch (Closes: #807006)
+  * Lots of security patches from upstream:
+  - net-mipsnet-check-packet-length-against-buffer-CVE-2016-4002.patch
+    (Closes: #821061, CVE-2016-4002)
+  - i386-kvmvapic-initialise-imm32-variable-CVE-2016-4020.patch
+    (Closes: #821062, CVE-2016-4020)
+  - esp-check-command-buffer-length-before-write-CVE-2016-4439.patch,
+    esp-check-dma-length-before-reading-scsi-command-CVE-2016-4441.patch
+    (Closes: #824856, CVE-2016-4439, CVE-2016-4441)
+  - scsi-mptsas-infinite-loop-while-fetching-requests-CVE-2016-4964.patch
+    (Closes: #825207, CVE-2016-4964)
+  - scsi-pvscsi-check-command-descriptor-ring-buffer-size-CVE-2016-4952.patch
+    (Closes: #825210, CVE-2016-4952)
+  - scsi-megasas-use-appropriate-property-buffer-size-CVE-2016-5106.patch
+    (Closes: #825615, CVE-2016-5106)
+  - scsi-megasas-initialise-local-configuration-data-buffer-CVE-2016-5105.patch
+    (Closes: #825614, CVE-2016-5105)
+  - scsi-megasas-check-read_queue_head-index-value-CVE-2016-5107.patch
+    (Closes: #825616, CVE-2016-5107)
+  - block-iscsi-avoid-potential-overflow-of-acb-task-cdb-CVE-2016-5126.patch
+    (Closes: #826151, CVE-2016-5126)
+  - scsi-esp-check-TI-buffer-index-before-read-write-CVE-2016-5338.patch
+    (Closes: #827024, CVE-2016-5338)
+  - scsi-megasas-null-terminate-bios-version-buffer-CVE-2016-5337.patch
+    (Closes: #827026, CVE-2016-5337)
+  * hw-dma-omap-spelling-fix-endianness.patch (lintian)
+  * arm-spelling-fix-mismatch.patch (lintian)
+
+ -- Michael Tokarev <mjt@tls.msk.ru>  Mon, 13 Jun 2016 12:10:44 +0300
+
 qemu (1:2.6+dfsg-1ubuntu1ppa1~trusty1) trusty; urgency=low
 
   * Backported to 14.04 (Trusty Tahr)
