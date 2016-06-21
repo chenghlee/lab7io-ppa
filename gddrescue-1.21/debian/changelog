@@ -1,0 +1,143 @@
+gddrescue (1.21-1ppa1) trusty; urgency=medium
+
+  * New upstream version 1.21
+  * Replace `--enable-linux` option with `--enable-non-posix` to reflect
+    changes made in upstream version 1.20.
+
+ -- Cheng H. Lee <cheng.h.lee@gmail.com>  Tue, 21 Jun 2016 10:11:05 -0500
+
+gddrescue (1.19-2) unstable; urgency=medium
+
+  * [68f127f] Enable hardening for Debian package build. Thanks to Graham
+    Inggs <graham@nerve.org.za> for the patch (Closes: #788326)
+  * [c6bc59f] Enable `--enable-linux` option. Thanks to Graham Inggs
+    <graham@nerve.org.za> for the patch (Closes: #788431)
+
+ -- Michael Prokop <mika@debian.org>  Thu, 18 Jun 2015 17:36:31 +0200
+
+gddrescue (1.19-1) unstable; urgency=medium
+
+  * [75e648f] Import new upstream release 1.19
+  * [8f2aa74] Update debian/copyright for GPL-2+ and new mail address
+  * [e0eead8] Bump Standards-Version to 3.9.6
+  * [f17f9ee] Use 3.0 (quilt) source format
+  * [0ef8c00] Bump compat version to 9
+  * [bcc40f1] Depend on debhelper >= 9.0~
+
+ -- Michael Prokop <mika@debian.org>  Mon, 06 Oct 2014 15:25:29 +0200
+
+gddrescue (1.18.1-1) unstable; urgency=medium
+
+  * [5b7de55] New upstream version 1.18.1
+  * [3da56c4] Bump Standards-Version to 3.9.5
+  * [7ba38ed] wrap-and-sort the debian directory
+  * [0cfd78e] Drop Vcs-git header (Closes: #730436)
+  * [2ebe10e] watch file: use main gnu.org mirror (Closes: #751156)
+  * [109a4cd] Provide documentation in HTML format (Closes: #750783)
+
+ -- Michael Prokop <mika@debian.org>  Sun, 31 Aug 2014 02:16:27 -0700
+
+gddrescue (1.17-1) unstable; urgency=low
+
+  * [0de2569] Merging upstream version 1.17 (Closes: #728674)
+  * [a1b39ac] Bump Standards-Version to 3.9.4
+
+ -- Michael Prokop <mika@debian.org>  Mon, 04 Nov 2013 09:37:06 +0100
+
+gddrescue (1.16-1) unstable; urgency=low
+
+  * [4d25099] Bump Standards-Version to 3.9.3.
+  * [4106a76] Build and include ddrescuelog in Debian package.
+    Thanks to Jim Paris <jim@jtan.com> for the patch (Closes: #667954)
+  * [dc027a6] Merging upstream version 1.16
+  * [6f5e9aa] Add build-arch + build-indep targets
+  * [81f2625] Update copyright file for new upstream release and switch
+    to dep5 format
+  * [b39cedc] Adopt package description for removed ddrescue package
+    (see #677101)
+  * [18550e2] Convert to minimal debhelper-7 style + Build-Depend on
+    debhelper >= 7.0.50~
+
+ -- Michael Prokop <mika@debian.org>  Mon, 11 Jun 2012 22:09:29 +0200
+
+gddrescue (1.15-1) unstable; urgency=low
+
+  * [394d986] Imported Upstream version 1.15
+  * [e17d1b1] Bump Standards-Version to 3.9.2
+  * [356c0c7] Drop Vcs-Browser because gitweb is disabled
+
+ -- Michael Prokop <mika@debian.org>  Tue, 03 Jan 2012 20:18:19 +0100
+
+gddrescue (1.14-1) unstable; urgency=low
+
+  * [5303f28] Imported Upstream version 1.14.
+  * [3277780] Bump Standards-Version to 3.9.1.
+  * [cc4bb5e] Update debian/copyright (fix copyright-with-old-dh-make-
+    debian-copyright).
+  * [28dd45d] Add debian/source/format.
+
+ -- Michael Prokop <mika@debian.org>  Wed, 16 Feb 2011 14:36:54 +0100
+
+gddrescue (1.11-1) unstable; urgency=low
+
+  * New maintainer. (Closes: #541329)
+  * New upstream release (Closes: #460946)
+  * Improve long description to make difference between
+    gddrescue and ddrescue more obvious.
+  * Some package cleanups and updates to make lintian happy:
+    - Add watch file.
+    - Drop dh templates from debian/rules.
+    - Drop config.guess stuff from debian/rules.
+    - Drop debian/info (info already present in rules file).
+    - Bump Standard-Version to 3.8.2 (no further changes).
+    - Bump Compat-Version to 5.
+    - Update copyright file.
+    - Add Homepage and VCS headers.
+    - Build-Depends on debhelper >= 5.
+    - Move debian/dirs to debian/rules.
+    - Do not strip binary via install. (Closes: #436947)
+    - Do not ignore 'make clean' errors, instead check for precense
+      of Makefile.
+    - Drop /usr/share/info/dir.gz + /usr/share/info/dir.old.gz
+    - Provide README.Debian and document log flodding issue.
+      (Closes: #427268)
+    - Drop debian/semantic.cache.
+
+ -- Michael Prokop <mika@debian.org>  Thu, 13 Aug 2009 16:06:23 +0200
+
+gddrescue (1.2-1.3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Really Fix FTBFS on mips and others (missed part of patch in ddrescue.cc)
+
+ -- Colin Tuckley <colint@debian.org>  Thu, 22 May 2008 15:02:53 +0100
+
+gddrescue (1.2-1.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix FTBFS on mips and others (Closes: #474426)
+    patch from Thiemo Seufer.
+
+ -- Colin Tuckley <colint@debian.org>  Tue, 20 May 2008 09:24:10 +0100
+
+gddrescue (1.2-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix gcc-4.3 FTBFS, patch by KiBi (Closes: #455315)
+
+ -- Marc 'HE' Brockschmidt <he@debian.org>  Sun, 16 Mar 2008 18:10:48 +0100
+
+gddrescue (1.2-1) unstable; urgency=low
+
+  * New Upstream Release.
+  * Fixed bad description Closes: #337684
+
+ -- Ayman Negm <negm@debian.org>  Wed, 26 Apr 2006 12:59:22 +0200
+
+gddrescue (1.1-1) unstable; urgency=low
+
+  * Initial release Closes: #316238
+  * Wishlist in the exist ddrescue Closes: #316467
+
+ -- Ayman Negm <negm@debian.org>  Sat, 29 Oct 2005 10:44:03 +0200
+

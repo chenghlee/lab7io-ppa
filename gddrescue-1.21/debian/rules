@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+DEB_HOST_ARCH_OS ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+EXTRA_CONFIGURE_ARGS =
+ifeq ($(DEB_HOST_ARCH_OS), linux)
+EXTRA_CONFIGURE_ARGS += --enable-non-posix
+endif
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		CXX='$(CXX)' \
+		CPPFLAGS='$(CPPFLAGS)' \
+		CXXFLAGS='$(CXXFLAGS)' \
+		LDFLAGS='$(LDFLAGS)' \
+		$(EXTRA_CONFIGURE_ARGS)
+
+override_dh_installinfo:
+	rm -f $(CURDIR)/debian/gddrescue/usr/share/info/dir
+
+override_dh_installchangelogs:
+	dh_installchangelogs ChangeLog
+
+override_dh_auto_build:
+	makeinfo --html doc/ddrescue.texi --output=html
+	dh_auto_build
