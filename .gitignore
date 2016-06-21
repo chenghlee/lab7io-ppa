@@ -1,0 +1,27 @@
+# Temporary files, backups, etc.
+.*.swp
+*~
+*#
+.DS_Store
+._.DS_Store
+
+# Compiled files
+*.o
+*.a
+*.so
+
+# Archive files, excluding original source archives
+/*.tar
+/*.tar.*
+!/*.orig.tar.*
+
+# Control files generate by debuild and friends
+/*.build
+/*.dsc
+/*.changes
+/*.upload
+
+# Ignore "upstream" sources but not debian packaging files
+/*/*
+!/*/debian
+!/*/debian/*
