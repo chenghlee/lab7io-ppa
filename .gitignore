@@ -16,6 +16,7 @@
 !/*.orig.tar.*
 
 # Control files generate by debuild and friends
+/*.diff.gz
 /*.build
 /*.dsc
 /*.changes
