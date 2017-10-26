@@ -1,4 +1,13 @@
-zabbix (1:3.4.3-2ppa1~ubuntu14.04) trusty; urgency=low
+zabbix (1:3.4.3-2ppa2~ubuntu14.04) trusty; urgency=low
+
+  * Fixed Launchpad ppc64el build by modifying "override_dh_install" rules so
+    they don't fail (i.e., exit non-zero) if certain architecture-independent
+    files are not in place (which can happen, e.g., when building only
+    architecture-dependent targets).
+
+ -- Cheng H. Lee <cheng.h.lee@gmail.com>  Thu, 26 Oct 2017 17:13:14 -0500
+
+zabbix (1:3.4.3-2ppa1~ubuntu14.04) xenial; urgency=low
 
   * List "default-jdk" rather than "java-sdk" as a build dependency;
     "java-sdk" uses gcj 4.8 (by default), which is too old (Java 5?) to
