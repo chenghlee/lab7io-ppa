@@ -1,3 +1,10 @@
+zabbix (1:3.4.6-1ppa2~ubuntu16.04) xenial; urgency=low
+
+  * Modify "override_dh_install" rules so the build succeeds even if
+    `zabbix_java_gateway` was not built.
+
+ -- Cheng H. Lee <cheng.h.lee@gmail.com>  Mon, 29 Jan 2018 19:56:17 -0600
+
 zabbix (1:3.4.6-1ppa1~ubuntu16.04) xenial; urgency=medium
 
   * Modify "override_dh_install" rules so they don't fail if certain
