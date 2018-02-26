@@ -1,0 +1,187 @@
+pexpect (4.0.1-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release (Closes: #744844)
+  * Bump standards-version to 3.9.6 (no change needed)
+  * Fix PyPI URL in debian/watch.  Thanks Lintian
+  * Build-depend on python-ptyprocess to generate the documentation
+    properly
+  * Depend on ptyprocess
+
+ -- Javi Merino <vicho@debian.org>  Sun, 01 Nov 2015 22:39:26 +0000
+
+pexpect (3.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * d/control: Add explicit dh-python Build-Depends.  (Closes: 744300)
+
+ -- Barry Warsaw <barry@debian.org>  Thu, 08 May 2014 16:05:58 -0400
+
+pexpect (3.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * debian/control: 
+    - In -doc, add breaks/replaces on python-pexcept <<3. Closes: #732915
+    - Drop python-pexcept-doc to Suggests in both other packages. 
+      Closes: #732889
+    - Bump standards-version to 3.9.5 (no changes)
+
+ -- Jackson Doak <noskcaj@ubuntu.com>  Sun, 26 Jan 2014 11:22:03 +1100
+
+pexpect (3.0-2) unstable; urgency=low
+
+  * Team upload.
+  * debian/copyright: Update to reflect upstreams change
+    from Expat to ISC (Closes: #731945). 
+
+ -- Andrew Starr-Bochicchio <asb@debian.org>  Thu, 12 Dec 2013 16:53:35 -0500
+
+pexpect (3.0-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Thomas Kluyver ]
+  * New upstream release. Closes: #729518
+  * Add packaging for Python 3.
+  * Use pybuild for packaging.
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+  [ Jackson Doak ]
+  * Create debian/python3-pexpect.docs
+
+  [ Andrew Starr-Bochicchio ]
+  * Remove empty debian/patches dir.
+  * Move documentation and examples into a new python-pexpect-doc
+    package. They are shared between the Python 2 and Python 3 packages,
+    so there is no need to install them with both.
+
+ -- Andrew Starr-Bochicchio <asb@debian.org>  Fri, 06 Dec 2013 20:20:26 -0500
+
+pexpect (2.4-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Arthur de Jong ]
+  * New upstream release (Closes: #609195).
+  * Switch to 3.0 (quilt) source format.
+  * Switch to dh-style debian/rules.
+  * Moved packaging from python-central to dh_python2 (Closes: #616935,
+    LP: #788514).
+  * Drop Conflicts/Replaces on ancient versions which shipped in sarge.
+  * Bump standards-version to 3.9.3.
+  * Register documentation with doc-base.
+  * Update debian/copyright (license is actually MIT instead of Python 2.3).
+  * Fix syntax errors in one of the examples (closes: #580271)
+
+  [ Piotr Ożarowski ]
+  * Added Vcs-Svn and Vcs-Browser fields
+
+  [ Sandro Tosi ]
+  * debian/control
+    - uniforming Vcs-Browser field
+  * debian/control
+    - switch Vcs-Browser field to viewsvn
+
+  [ Carlos Galisteo ]
+  * debian/control
+    - Added Homepage field.
+
+ -- Arthur de Jong <adejong@debian.org>  Fri, 09 Mar 2012 11:43:41 +0100
+
+pexpect (2.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fix lintian warnings:
+        - Move debhelper to Build-Depends from Build-Depends-Indep.
+        - Remove DH_COMPAT in debian/rules.
+  	- Added debian/pycompat.
+  	- Added #! line for examples/ssh_session.py.
+  * Updated standards version.
+
+ -- Ganesan Rajagopal <rganesan@debian.org>  Sun, 27 Jul 2008 18:21:35 +0530
+
+pexpect (2.1-1.1) unstable; urgency=low
+
+  * NMU. Rebuild to move files to /usr/share/pyshared. Closes: #490482.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 18 Jul 2008 15:51:04 +0000
+
+pexpect (2.1-1) unstable; urgency=low
+
+  * New upstream version.
+  * Included pxssh.py and fdpxpect.py (Closes: #356128).
+  * Included docs and examples (Closes:  #230850).
+  * Updated for new python policy using python-central (Closes: #373476).
+  * Added watch file.
+
+ -- Ganesan Rajagopal <rganesan@debian.org>  Tue, 20 Jun 2006 09:54:09 +0530
+
+pexpect (2.0-2) unstable; urgency=low
+
+  * Included pexpect package into Python Modules repository.
+  * Add python-modules-team@lists.alioth.debian.org to Uploaders.
+  * Remove python2.2-pexpect package.
+
+ -- Ganesan Rajagopal <rganesan@debian.org>  Sat, 15 Apr 2006 20:41:47 +0530
+
+pexpect (2.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fixed *.docs to take README instead of README.txt.
+  * Updated standards version.
+
+ -- Ganesan Rajagopal <rganesan@debian.org>  Wed, 28 Dec 2005 13:32:00 +0530
+
+pexpect (0.999-5) unstable; urgency=low
+
+  * Aargh. Install python2.4 binaries in the right place.
+  * Added python2.4 to Build-depends.
+
+ -- Ganesan Rajagopal <rganesan@debian.org>  Sat, 19 Feb 2005 08:17:09 +0530
+
+pexpect (0.999-4) unstable; urgency=low
+
+  * Really build pexpect for python 2.4.
+
+ -- Ganesan Rajagopal <rganesan@debian.org>  Sat, 09 Jan 2005 22:15:36 +0530
+
+pexpect (0.999-3) unstable; urgency=low
+
+  * Build python 2.4 package.
+  * python-pexpect now depends on ${python:Depends}.
+
+ -- Ganesan Rajagopal <rganesan@debian.org>  Sat, 09 Jan 2005 22:10:36 +0530
+
+pexpect (0.999-2) unstable; urgency=low
+
+  * Build-depend on python (Closes: #258299).
+
+ -- Ganesan Rajagopal <rganesan@debian.org>  Wed, 09 Jul 2004 09:45:36 +0530
+
+pexpect (0.999-1) unstable; urgency=low
+
+  * New upstream release (Closes: #257736).
+
+ -- Ganesan Rajagopal <rganesan@debian.org>  Wed, 07 Jul 2004 11:48:36 +0530
+
+pexpect (0.99-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Ganesan Rajagopal <rganesan@debian.org>  Tue, 14 Oct 2003 17:36:36 +0530
+
+pexpect (0.98-2) unstable; urgency=low
+
+  * Don't ship python bytecode files (closes: #207313).
+
+ -- Ganesan Rajagopal <rganesan@debian.org>  Mon,  8 Sep 2003 12:57:01 +0530
+
+pexpect (0.98-1) unstable; urgency=low
+
+  * Initial packaging (Closes: #156784).
+
+ -- Ganesan Rajagopal <rganesan@debian.org>  Wed, 13 Aug 2003 18:25:51 +0530

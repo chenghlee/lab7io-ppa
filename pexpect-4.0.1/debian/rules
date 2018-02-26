@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+PYTHON2_VERSIONS=$(shell pyversions -vr)
+PYTHON3_VERSIONS=$(shell py3versions -vr)
+
+%:
+	dh $@ --with python2,python3,sphinxdoc --buildsystem=pybuild
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf doc/_build
+	rm -rf .coverage
+	rm -rf tests/log
+
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+# Testsuite disabled because it timeouts
+test-python2-%:
+	#PYTHON=python$* py.test
+
+test-python3-%:
+	#PYTHON=python$* py.test-3
+
+override_dh_auto_test: $(foreach pyversion,${PYTHON2_VERSIONS},$(pyversion:%=test-python2-%)) $(foreach pyversion,${PYTHON3_VERSIONS},$(pyversion:%=test-python3-%))
+endif
+
+override_dh_installdocs:
+	PYTHONPATH=`pwd` make -C doc html
+	dh_installdocs -ppython-pexpect-doc doc/_build/html
+	dh_installdocs -A
+
+override_dh_install:
+	dh_install
+	# async.py is python3 only and can't be compiled for python2
+	# https://github.com/pexpect/pexpect/issues/290
+	rm $(CURDIR)/debian/python-pexpect/usr/lib/python2.7/dist-packages/pexpect/async.py

@@ -1,0 +1,12 @@
+Document: pexpect
+Title: A Pure Python Expect-like module.
+Author: Noah Spurrier
+Abstract: Pexpect is a pure Python module for spawning child applications;
+ controlling them; and responding to expected patterns in their output.
+ Pexpect works like Don Libes' Expect. Pexpect allows your script to spawn
+ a child application and control it as if a human were typing commands.
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-pexpect-doc/html/index.html
+Files: /usr/share/doc/python-pexpect-doc/html/*
