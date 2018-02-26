@@ -1,0 +1,11 @@
+# see git-dpm(1) from git-dpm package
+fef1d68c76fef1042f3e040fc287d45269181973
+fef1d68c76fef1042f3e040fc287d45269181973
+fef1d68c76fef1042f3e040fc287d45269181973
+fef1d68c76fef1042f3e040fc287d45269181973
+pexpect_3.2.orig.tar.gz
+5eb7882f5baa194c0cae9bdfc24c8adc22caa783
+131070
+debianTag="debian/%e%v"
+patchedTag="patched/%e%v"
+upstreamTag="upstream/%e%u"
