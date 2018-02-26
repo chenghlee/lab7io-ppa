@@ -1,5 +1,6 @@
 Source: ptyprocess
-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Maintainer: Cheng H. Lee <cheng.h.lee@gmail.com>
+XSBC-Original-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 Uploaders: Julien Puydt <julien.puydt@laposte.net>
 Section: python
 Priority: optional

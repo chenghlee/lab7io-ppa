@@ -1,3 +1,9 @@
+ptyprocess (0.5-1ppa1) trusty; urgency=medium
+
+  * Backport to 14.04 (Trusty Tahr)
+
+ -- Cheng H. Lee <cheng.h.lee@gmail.com>  Mon, 26 Feb 2018 10:48:28 -0600
+
 ptyprocess (0.5-1) unstable; urgency=medium
 
   * Initial release. (Closes: #787342)
