@@ -1,3 +1,9 @@
+pexpect (4.0.1-1ppa1) trusty; urgency=medium
+
+  * Backport to 14.04 (Trusty Tahr)
+
+ -- Cheng H. Lee <cheng.h.lee@gmail.com>  Mon, 26 Feb 2018 11:10:07 -0600
+
 pexpect (4.0.1-1) unstable; urgency=medium
 
   * Team upload

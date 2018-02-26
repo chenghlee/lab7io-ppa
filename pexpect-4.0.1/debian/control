@@ -2,7 +2,8 @@ Source: pexpect
 Section: python
 Priority: optional
 Build-Depends: dh-python, python-all (>= 2.6.6-3~), python3-all, python-sphinx, debhelper (>= 7.0.50~), python-ptyprocess, python3-ptyprocess, python-pytest, python3-pytest
-Maintainer: Ganesan Rajagopal <rganesan@debian.org>
+Maintainer: Cheng H. Lee <cheng.h.lee@gmail.com>
+XSBC-Original-Maintainer: Ganesan Rajagopal <rganesan@debian.org>
 Uploaders: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 Standards-Version: 3.9.6
 Vcs-Git: git://anonscm.debian.org/python-modules/packages/pexpect.git
