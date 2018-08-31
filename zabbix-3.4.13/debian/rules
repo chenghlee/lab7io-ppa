@@ -97,13 +97,15 @@ override_dh_auto_build:
 
 override_dh_install:
 	dh_install
-	rm debian/zabbix-java-gateway/usr/share/zabbix-java-gateway/lib/logback.xml
-	rm debian/zabbix-java-gateway/usr/share/zabbix-java-gateway/lib/logback-console.xml
-	chmod 755 debian/zabbix-java-gateway/usr/sbin/zabbix_java_gateway
+	rm -f debian/zabbix-java-gateway/usr/share/zabbix-java-gateway/lib/logback.xml
+	rm -f debian/zabbix-java-gateway/usr/share/zabbix-java-gateway/lib/logback-console.xml
+	test -e debian/zabbix-java-gateway/usr/sbin/zabbix_java_gateway \
+		&& chmod 755 debian/zabbix-java-gateway/usr/sbin/zabbix_java_gateway \
+		|| /bin/true
 	find debian/zabbix-frontend-php/usr/share/zabbix -name .htaccess | xargs rm -f
 	find debian/zabbix-frontend-php/usr/share/zabbix/locale -name '*.po' | xargs rm -f
 	find debian/zabbix-frontend-php/usr/share/zabbix/locale -name '*.sh' | xargs rm -f
-	rm debian/zabbix-frontend-php/usr/share/zabbix/fonts/DejaVuSans.ttf
+	rm -f debian/zabbix-frontend-php/usr/share/zabbix/fonts/DejaVuSans.ttf
 
 override_dh_installinit:
 	dh_installinit -p zabbix-agent

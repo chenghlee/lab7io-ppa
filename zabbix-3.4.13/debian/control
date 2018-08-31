@@ -1,7 +1,8 @@
 Source: zabbix
 Section: net
 Priority: optional
-Maintainer: Koadi Terashima <kodai.terashima@zabbix.com>
+Maintainer: Cheng H. Lee <cheng.h.lee@gmail.com>
+XSBC-Original-Maintainer: Koadi Terashima <kodai.terashima@zabbix.com>
 Build-Depends: debhelper (>= 9),
                autotools-dev,
                quilt (>= 0.40) | devscripts (>= 2.17.12),
@@ -16,7 +17,7 @@ Build-Depends: debhelper (>= 9),
                libopenipmi-dev,
                libssh2-1-dev (>= 1.0.0),
                unixodbc-dev,
-               java-sdk,
+               default-jdk,
                libxml2-dev,
                libpcre3-dev,
                libevent-dev,
